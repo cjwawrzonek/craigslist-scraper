@@ -1,0 +1,18 @@
+{
+    "search_options": {
+        "area": "sfbay",
+        "search_type": "apa",
+        "postal": "94115",
+        "search_distance": 4,
+        "min_bedrooms": 4,
+        "postedToday": 1
+    },
+    "filter_options": {
+        "min_ratio": 700,
+        "max_ratio": 1500
+    },
+    "script_options": {
+        "log_file": "listings.log",
+        "template_file": "email.html"
+    }
+}

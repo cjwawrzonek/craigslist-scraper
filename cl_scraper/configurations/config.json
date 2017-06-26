@@ -1,0 +1,52 @@
+{
+    // Example Json configuration file. Not loadable
+
+    // Search parameters
+    "search_options": {
+        // ##############################
+        // Required params
+        // ##############################
+
+        // The area to search, ex: [sfbay, chicago, lasvegas]
+        "area": "chicago",
+        // The type of search, ex: [apa (apartments), ata (antiques), tia (tickets)]
+        "search_type": "apa",
+
+        // ##############################
+        // Optional params
+        // ##############################
+
+        // The zip code to center your search
+        "postal": "60610",
+        // Max distance (in miles) from zip you wish to search in
+        "search_distance": 5,
+        // Housing options for apa searches
+        "min_bedrooms": 2,
+        "max_bedrooms": 5,
+        "min_bathrooms": 1,
+        "max_bathrooms": 3,
+        "minSqft": 1000,
+        "maxSqft": 2000,
+        // Pet options. 1 for true, 0 for false
+        "pets_cats": 1,
+        "pets_dogs": 1,
+        // 1 for true, 0 for false
+        "postedToday": 1
+    },
+
+    // Parameters used to filter results
+    "filter_options": {
+        // minimum price / bedroom in dollars for apa searches
+        "min_ratio": 500,
+        "max_ratio": 1500,
+    },
+
+    // Options for how you want the script executed
+    "script_options": {
+        // The script will use this file path to continuously store and update
+        // search results so that you do not get repeated results.
+        "log_file": "listings.log",
+        // An html template using the Jinja2 syntax for formatting the email response
+        "template_file": "email.html"
+    }
+}

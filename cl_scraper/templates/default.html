@@ -1,0 +1,23 @@
+<html>
+  <body>
+    {% if params %}
+      <p>Search Parameters:</p>
+
+      <ul>
+        {% for param in params %}
+          <li>{{param}}: {{ params[param]|string }}</li>    
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    <h4>New Results:</h4><br>
+
+    {% for result in results %}
+      {% for key in result %}
+        <p>{{ key }}: {{ result[key]|string }}</p>
+      {% endfor %}
+      <br>
+    {% endfor %}
+
+  </body>
+</html>

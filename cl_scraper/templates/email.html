@@ -1,0 +1,49 @@
+<html>
+  <head>
+  <style>
+    .box {
+      margin-bottom: 30px;
+      padding: 30px 15px;
+      background: #eee;
+      box-shadow: 5px 5px 50px #151515;
+      border-radius: 4px;
+    }
+  </style>
+  </head>
+
+  <body>
+    <div class="row">
+      <div class="box col-sm-8">
+
+        {% if params %}
+          <h4>Search Parameters:</h4>
+          <ul>
+            {% for param in params %}
+              <li>{{param}}: {{ params[param]|string }}</li>    
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+      </div>
+    </div>
+
+    <h4>New Results:</h4>
+
+    {% for result in results %}
+
+      <div class="row">
+      <div class="box col-sm-8">
+          <img style="border-radius:3px;" src="{{ result['img_url'] }}"><br>
+          <p>Title: {{ result['title'] }}</p>
+          <p>Price: {{ result['price']|string }}</p>
+          <p>Beds: {{ result['bdr']|string }}</p>
+          <p>Price / Room: {{ result['ratio']|string }}</p>
+          <p><a href="{{ result['url'] }}">{{ result['url'] }}</a></p>
+          </div>
+      </div>
+
+    {% endfor %}
+
+  </body>
+
+</html>
